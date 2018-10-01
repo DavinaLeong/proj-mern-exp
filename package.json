@@ -1,0 +1,35 @@
+{
+  "name": "proj-mern-exp",
+  "version": "0.0.0",
+  "description": "Experimental MERN project to help me better understand NodeJS ecosystem.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavinaLeong/proj-mern-exp.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mern-stack",
+    "mern-project",
+    "learning",
+    "experiment",
+    "expressjs",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Davina Leong <davina.leong@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavinaLeong/proj-mern-exp/issues"
+  },
+  "homepage": "https://github.com/DavinaLeong/proj-mern-exp#readme",
+  "dependencies": {
+    "body-parser": "~1.18.3",
+    "express": "~4.16.3",
+    "nodemon": "~1.18.4"
+  }
+}
