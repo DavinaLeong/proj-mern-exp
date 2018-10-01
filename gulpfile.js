@@ -17,7 +17,8 @@ const paths     = {
             bs:     './dist/vendor/bootstrap',
             jq:     './dist/vendor/jquery',
             pjs:    './dist/vendor/parsleyjs',
-            dtb:    './dist/vendor/dataTables'
+            dtb:    './dist/vendor/dataTables',
+            prjs:   './dist/vendor/prismjs'
         }
     }
 };
@@ -83,6 +84,10 @@ gulp.task(tasks.copy, () => {
                 `${paths.nodeModules}/dataTables.net-responsive-bs4/js/**.*`
             ])
             .pipe(gulp.dest(`${paths.dist.vendor.dtb}/js`)),
+
+        //PrismJS
+        gulp.src(`${paths.nodeModules}/prismjs/**/*.{css,js}`)
+            .pipe(gulp.dest(`${paths.dist.vendor.prjs}`))
     ]);
 });
 
