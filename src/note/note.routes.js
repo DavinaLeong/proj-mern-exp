@@ -8,12 +8,12 @@ module.exports = (app) => {
     // Create a new note
     app.post('/notes', NoteController.create);
 
-    // Get a note by it's ID
+    // Get a note by its ID
     app.get('/notes/:noteId', NoteController.find);
 
-    // Update a note by it's ID
+    // Update a note by its ID
     app.post('/notes/:noteId', NoteController.update);
 
-    // Delete a note by it's ID
+    // Delete a note by its ID
     app.post('/notes/:noteId/delete', NoteController.delete)
 };
