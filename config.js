@@ -3,8 +3,8 @@ module.exports = {
         port: 3000,
         staticUrl: './dist'
     },
-    database: {
-        port: '',
-        url: ''
+    mongodb: {
+        host: 'mongodb://localhost:27017/',
+        database: 'notes'
     }
 };
