@@ -40,7 +40,7 @@ module.exports = {
 
     find: (req, res) => {
         //TODO:  Find a note by its ID
-        Note.findById(req.params.noteId)
+        model.findById(req.params.noteId)
             .then(note => {
                 if (! note) {
                     return res.status(404).send({
@@ -92,7 +92,7 @@ module.exports = {
     },
 
     delete: (req, res) => {
-        note.findByIdAndDelete(req.params.noteId)
+        model.findByIdAndDelete(req.params.noteId)
             .then(note => {
                 if (! note) {
                     return res.status(404).send({

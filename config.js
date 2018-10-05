@@ -5,6 +5,6 @@ module.exports = {
     },
     mongodb: {
         host: 'mongodb://localhost:27017/',
-        database: 'notes'
+        database: 'proj-mern-exp'
     }
 };

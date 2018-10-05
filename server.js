@@ -21,25 +21,26 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(config.mongodb.host, { useNewUrlParser: true })
     .then(() => {
-        console.log(`Connected to ${config.mongodb.url}.`);
+        console.log(`Connected to ${config.mongodb.host}.`);
     })
     .catch(err => {
-        console.log(`Failed to connect to ${config.mongodb.url}.`);
+        console.log(`Failed to connect to ${config.mongodb.host}.`);
         console.log(`Error:\n`, err);
         process.exit();
     });
 /* #endregion */
 
 
-/* #region 3. Routes */
-
-/* #endregion */
-
-
-/* #region 4. Static */
+/* #region 3. Static */
 app.use(express.static(config.app.staticUrl));
 app.use(config.app.staticUrl, express.static(path.join(__dirname, config.app.staticUrl)));
 /* #endregion */
+
+
+/* #region 4. Routes */
+require('./src/note/note.routes')(app);
+/* #endregion */
+
 
 app.listen(config.app.port, () => {
     console.log(`Server started on port ${config.app.port}.`);
