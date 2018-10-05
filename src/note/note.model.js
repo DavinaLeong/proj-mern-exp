@@ -1,11 +1,8 @@
-module.exports = (mongoose) => {
-    const NoteSchema = mongoose.Schema({
-        title: String,
-        content: String,
-        authorId: Number
-    }, {
-        timestamps: true
-    });
+const mongoose = require('mongoose');
+const schemaDefinition = require('./note.schema');
 
-    return mongoose.model('Note', NoteSchema);
-};
+const NoteSchema = mongoose.Schema(schemaDefinition.schema, {
+    timestamps: true
+});
+
+module.exports = mongoose.model(schemaDefinition.collection, NoteSchema);

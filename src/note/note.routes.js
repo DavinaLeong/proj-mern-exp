@@ -1,19 +1,19 @@
 module.exports = (app) => {
     // TODO: Implement controller
-    // const NoteController = require('./note.contoller.js');
+    const controller = require('./note.controller');
 
     // Get all notes
-    app.get('/notes', NoteController.findAll);
+    app.get('/notes', controller.findAll);
 
     // Create a new note
-    app.post('/notes', NoteController.create);
+    app.post('/notes', controller.create);
 
     // Get a note by its ID
-    app.get('/notes/:noteId', NoteController.find);
+    app.get('/notes/:noteId', controller.find);
 
     // Update a note by its ID
-    app.post('/notes/:noteId', NoteController.update);
+    app.post('/notes/:noteId', controller.update);
 
     // Delete a note by its ID
-    app.post('/notes/:noteId/delete', NoteController.delete)
+    app.post('/notes/:noteId/delete', controller.delete)
 };
