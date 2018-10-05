@@ -4,7 +4,7 @@ const bodyParser    = require('body-parser');
 const mongoose      = require('mongoose');
 const path          = require('path');
 
-const config        = require('./lib/config');
+const config        = require('./config');
 /* #endregion */
 
 const app = express();
