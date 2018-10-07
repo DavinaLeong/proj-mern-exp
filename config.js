@@ -1,7 +1,7 @@
 module.exports = {
     app: {
         port: 3000,
-        staticUrl: './dist'
+        staticUrl: './frontend/dist'
     },
     mongodb: {
         host: 'mongodb://localhost:27017/',
