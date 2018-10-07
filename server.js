@@ -32,13 +32,13 @@ mongoose.connect(config.mongodb.host, { useNewUrlParser: true })
 
 
 /* #region 3. Static */
-app.use(express.static(config.app.staticUrl));
-app.use(config.app.staticUrl, express.static(path.join(__dirname, config.app.staticUrl)));
+app.use(express.static(config.app.client.dir));
+app.use(config.app.client.route, express.static(path.join(__dirname, config.app.client.dir)));
 /* #endregion */
 
 
 /* #region 4. Routes */
-require('./src/note/note.routes')(app);
+require('./src/backend/note/note.routes')(app);
 /* #endregion */
 
 
