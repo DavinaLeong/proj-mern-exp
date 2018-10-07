@@ -3,81 +3,68 @@
     <head>
         <!-- META start -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- META end -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- META end -->
 
-        <!-- STYLES start -->
-        <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./vendor/prismjs/themes/prism.css">
-        <!-- STYLES end -->
+    <!-- STYLES start -->
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/prismjs/themes/prism.css">
+    <!-- STYLES end -->
 
-        <link rel="icon" href="./images/icon.png" type="image/png">
+    <link rel="icon" href="./images/icon.png" type="image/png">
 
-        <title>Frontend Bootstrap</title>
-    </head>
-    <body>
-        <!-- <a href="https://github.com/DavinaLeong/proj-mern-exp.git"><img style="position: absolute; top: 0; right: 0; border: 0;"
-            src="./images/github-ribbon.svg" alt="View on GitHub" width="150" height="150"></a> -->
+    <title>MERN Exp - Notes App</title>
+</head>
+<body class="container-fluid">
+    <!-- <a href="https://github.com/DavinaLeong/proj-mern-exp.git"><img style="position: absolute; top: 0; right: 0; border: 0;"
+        src="./images/github-ribbon.svg" alt="View on GitHub" width="150" height="150"></a> -->
 
-        <div class="container">
-            <h1 class="display-4">Frontend Bootstrap</h1>
-            <p>This repo is intended to be the starting point for all frontend projects.</p>
+    <div id="wrapper" class="row py-2">
+        <div id="sidebar" class="col-3 bg-light">
+            <h6 class="mb-1">Notes App</h6>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./"><i class="fas fa-home fa-fw"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./note/find-all.html"><i class="fas fa-file-alt fa-fw"></i> All Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./note/create.html"><i class="fas fa-plus fa-fw"></i> Create a Note</a>
+                </li>
+            </ul>
+        </div><!-- ./#sidebar -->
+        <div id="main" class="col-9">
+            <nav id="breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+            </nav>
 
-            <p>To view the pages as they are, simply run this command in your console/terminal:</p>
-            <pre><code class="language-bash">npm start</code></pre>
+            <h1 id="title-page" class="display-4">Notes App</h1>
+            <hr>
+            
+            <p>A simple note-creation app!</p>
 
-            <p>And navigate to <code>http://localhost:3000/index.html</code> in your web browser.</p>
-            <p>To update the vendor packages, run this command in your terminal/console:</p>
-            <pre><code class="language-bash">gulp</code></pre>
-
-            <div class="card-group mt-3">
-                <div id="card-includes" class="card">
-                    <div class="card-header">Included Packages</div>
-                    <div class="card-body">
-                        <ol>
-                            <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap 4 <i class="fas fa-external-link-square-alt fa-fw"></i></a></li>
-                            <li><a href="https://fontawesome.com/" target="_blank">Font Awesome 5 Free <i class="fas fa-external-link-square-alt fa-fw"></i></a></li>
-                            <li><a href="http://jquery.com/" target="_blank">jQuery 3 <i class="fas fa-external-link-square-alt fa-fw"></i></a></li>
-                            <li><a href="https://prismjs.com/" target="_blank">PrismJS <i class="fas fa-external-link-square-alt fa-fw"></i></a>
-                                <br><small>(syntax highlighting)</small></li>
-                        </ol>
-                    </div>
-                </div><!-- ./card-includes -->
-
-                <div id="card-toggled" class="card">
-                    <div class="card-header">Toggled packages in <code>config.js</code>:</div>
-                    <div class="card-body">
-                        <ol>
-                            <li><a href="https://nodemon.io/" target="_blank">Nodemon <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://gulpjs.com/" target="_blank">GulpJS <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://www.npmjs.com/package/gulp-if" target="_blank">Gulp-If <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://expressjs.com/" target="_blank">ExpressJS <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                        </ol>
-                    </div>
-                </div><!-- ./card-toggled -->
-
-                <div id="card-dev" class="card">
-                    <div class="card-header">Dev dependencies</div>
-                    <div class="card-body">
-                        <ol>
-                            <li><a href="https://nodemon.io/" target="_blank">Nodemon <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://gulpjs.com/" target="_blank">GulpJS <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://www.npmjs.com/package/gulp-if" target="_blank">Gulp-If <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                            <li><a href="https://expressjs.com/" target="_blank">ExpressJS <i class="fas fa-external-link-square-alt fa-fw"></i></a></small></li>
-                        </ol>
-                    </div>
-                </div><!-- ./card-dev -->
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        <li><a href="./note/find-all.html">All Notes</a></li>
+                        <li><a href="./note/create.html">Create a new Note</a></li>
+                    </ul>
+                </div>
             </div>
 
             <footer class="mt-5 mb-3">
                 <hr>
                 <p class="small font-italic text-secondary text-right">Davina Leong, 2018</p>
             </footer>
-        </div><!-- ./container -->
+        </div><!-- ./#main -->
+    </div><!-- ./#wrapper -->
 
-        <script src="./vendor/jquery/jquery.min.js"></script>
-        <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="./vendor/fontawesome/js/all.min.js"></script>
-        <script src="./vendor/prismjs/prism.js"></script>
-    </body>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/fontawesome/js/all.min.js"></script>
+    <script src="./vendor/prismjs/prism.js"></script>
+</body>
 </html>

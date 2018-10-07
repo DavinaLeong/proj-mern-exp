@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META start -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- META end -->
+
+    <!-- STYLES start -->
+    <link rel="stylesheet" href="./../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/parsley-b4.css">
+    <!-- STYLES end -->
+
+    <link rel="icon" href="./../images/icon.png" type="image/png">
+
+    <title>MERN Exp</title>
+</head>
+<body class="container-fluid">
+    <!-- <a href="https://github.com/DavinaLeong/proj-mern-exp.git"><img style="position: absolute; top: 0; right: 0; border: 0;"
+        src="./images/github-ribbon.svg" alt="View on GitHub" width="150" height="150"></a> -->
+
+        <div id="wrapper" class="row py-2">
+            <div id="sidebar" class="col-3 bg-light">
+                <h6 class="mb-1">Notes App</h6>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./.."><i class="fas fa-home fa-fw"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./find-all.html"><i class="fas fa-file-alt fa-fw"></i> All Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./create.html"><i class="fas fa-plus fa-fw"></i> Create a Note</a>
+                    </li>
+                </ul>
+            </div><!-- ./#sidebar -->
+            <div id="main" class="col-9">
+                <nav id="breadcrumb" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./..">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create a Note</li>
+                    </ol>
+                </nav>
+    
+                <h1 id="title-page" class="display-4">Create a Note</h1>
+                <hr>
+                
+                <form id="form-create-note" method="POST" action="./notes">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text" placeholder="Untitled Text" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Content <span class="text-danger">*</span></label>
+                        <textarea id="content" name="content" rows="4" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="authorId">Author</label>
+                        <select id="authorId" name="authorId" class="form-control">
+                            <option value="0">- Select -</option>
+                            <option value="1">John Doe</option>
+                            <option value="2">Jenny Green</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="text-danger">* required fields</p>
+                        <button id="btn-submit" type="button" class="btn btn-primary"><i class="fas fa-check fa-fw"></i> Submit</button>
+                    </div>
+                </form>
+    
+                <footer class="mt-5 mb-3">
+                    <hr>
+                    <p class="small font-italic text-secondary text-right">Davina Leong, 2018</p>
+                </footer>
+            </div><!-- ./#main -->
+        </div><!-- ./#wrapper -->
+
+    <script src="./../vendor/jquery/jquery.min.js"></script>
+    <script src="./../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./../vendor/fontawesome/js/all.min.js"></script>
+    <script src="./../vendor/parsleyjs/parsley.min.js"></script>
+</body>
+</html>
