@@ -1,6 +1,6 @@
 const config = {
     app: {
-        port: 3000,
+        port: 3000
     },
     paths: {
         root: './',
@@ -18,5 +18,7 @@ config.app.client = {
     dir: config.paths.client + '/dist',
     route: config.paths.root
 };
+
+config.app.api = `http://localhost:${config.app.port}/api/`;
 
 module.exports = config;

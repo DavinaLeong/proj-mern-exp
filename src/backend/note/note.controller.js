@@ -33,7 +33,7 @@ module.exports = {
             })
             .catch(err => {
                 return res.status(500).send({
-                    message: "An error occurred while creating a Note."
+                    message: err.message || "An error occurred while creating a Note."
                 });
             });
     },

@@ -45,7 +45,7 @@
                 <h1 id="title-page" class="display-4">Create a Note</h1>
                 <hr>
                 
-                <form id="form-create-note" method="POST" action="./notes">
+                <form id="form-create-note" method="POST">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input id="title" name="title" type="text" placeholder="Untitled Text" class="form-control">
@@ -67,7 +67,8 @@
 
                     <div class="form-group">
                         <p class="text-danger">* required fields</p>
-                        <button id="btn-submit" type="button" class="btn btn-primary"><i class="fas fa-check fa-fw"></i> Submit</button>
+                        <button id="btn-submit" type="button" class="btn btn-primary"
+                            onclick="formSubmit()"><i class="fas fa-check fa-fw"></i> Submit</button>
                     </div>
                 </form>
     
@@ -82,5 +83,30 @@
     <script src="./../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./../vendor/fontawesome/js/all.min.js"></script>
     <script src="./../vendor/parsleyjs/parsley.min.js"></script>
+    <script>
+        function formSubmit() {
+            const formId = '#form-create-note';
+            const formData = {
+                title: $(`${formId} input[name=title]`).val(),
+                content: $(`${formId} input[name=content]`).val(),
+                authorId: $(`${formId} input[name=authorId]`).val()
+            };
+
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:3000/api/notes',
+                data: formData,
+                contentType: 'application/json',
+                success: (responseData, textStatus, jqXHR) => {
+                    console.log(textStatus, responseData);
+                    alert('Note created.');
+                },
+                error: (jqXHR, textStatus, errorThrown) => {
+                    console.log(textStatus, errorThrown);
+                    alert('Error\n', errorThrown);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
