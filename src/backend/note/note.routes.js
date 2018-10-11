@@ -5,17 +5,17 @@ module.exports = (app) => {
     const controller = require('./note.controller');
 
     // Get all notes
-    app.get(`${config.app.api}notes`, controller.findAll);
+    app.get(`/${config.routes.api}/notes`, controller.findAll);
 
     // Create a new note
-    app.post(`${config.app.api}notes`, controller.create);
+    app.post(`/${config.routes.api}/notes`, controller.create);
 
     // Get a note by its ID
-    app.get(`${config.app.api}notes/:noteId`, controller.find);
+    app.get(`/${config.routes.api}/notes/:noteId`, controller.find);
 
     // Update a note by its ID
-    app.post(`${config.app.api}notes/:noteId`, controller.update);
+    app.post(`/${config.routes.api}/notes/:noteId`, controller.update);
 
     // Delete a note by its ID
-    app.post(`${config.app.api}notes/:noteId/delete`, controller.delete)
+    app.post(`/${config.routes.api}/notes/:noteId/delete`, controller.delete)
 };

@@ -32,8 +32,8 @@ mongoose.connect(config.mongodb.host, { useNewUrlParser: true })
 
 
 /* #region 3. Static */
-app.use(express.static(config.app.client.dir));
-app.use(config.app.client.route, express.static(path.join(__dirname, config.app.client.dir)));
+app.use(express.static('./src/client/dist'));
+app.use(`${config.routes.static}`, express.static(path.join(__dirname, './src/client/dist')));
 /* #endregion */
 
 

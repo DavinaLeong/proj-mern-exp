@@ -11,6 +11,10 @@ const config = {
     mongodb: {
         host: 'mongodb://localhost:27017/',
         database: 'proj-mern-exp'
+    },
+    routes: {
+        api: 'api',
+        static: '/'
     }
 };
 
@@ -18,7 +22,5 @@ config.app.client = {
     dir: config.paths.client + '/dist',
     route: config.paths.root
 };
-
-config.app.api = `http://localhost:${config.app.port}/api/`;
 
 module.exports = config;
